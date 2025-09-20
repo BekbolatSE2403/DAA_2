@@ -1,4 +1,4 @@
-abstract class Logistic {
+abstract class Logistics {
     public void planDelivery(double distance) {
         Transport transport = createTransport();
         transport.deliver();

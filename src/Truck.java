@@ -7,7 +7,7 @@ public class Truck implements Transport {
     }
 
     @Override
-    public void calculateCost(double distance) {
+    public double calculateCost(double distance) {
         return distance * Cost_per_km;
     }
 }

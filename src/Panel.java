@@ -1,3 +1,3 @@
 public interface Panel {
-    void rennder();
+    void render();
 }

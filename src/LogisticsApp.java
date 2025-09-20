@@ -1,5 +1,5 @@
-public class LogisticApp {
-    private Logistic logistic;
+public class LogisticsApp {
+    private Logistics logistics;
     private GUIFactory guiFactory;
 
     public LogisticsApp(Logistics logistics, GUIFactory guiFactory) {
