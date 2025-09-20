@@ -1,4 +1,6 @@
+// Interface defining the contract for all transport types
+
 public interface Transport {
-    void deliver();
-    double calculateCost(double distance);
+    void deliver();   // Method to perform delivery
+    double calculateCost(double distance);    // Method to calculate delivery cost
 }

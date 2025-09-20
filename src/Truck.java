@@ -1,5 +1,6 @@
+// Concrete implementation of Transport for truck delivery
 public class Truck implements Transport {
-    private static final double Cost_per_km  = 1.5;
+    private static final double COST_PER_KM = 1.5; // Cost per kilometer for truck delivery
 
     @Override
     public void deliver() {
@@ -8,6 +9,6 @@ public class Truck implements Transport {
 
     @Override
     public double calculateCost(double distance) {
-        return distance * Cost_per_km;
+        return distance * COST_PER_KM; // Calculate total cost based on distance
     }
 }

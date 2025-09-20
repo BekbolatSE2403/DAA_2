@@ -1,9 +1,9 @@
-// Demo class with main method
+// Demo class demonstrating both design patterns
 public class Main {
     public static void main(String[] args) {
         System.out.println("=== Factory Method Demo ===");
 
-        // Demonstrate Factory Method
+        // Demonstrate Factory Method pattern
         Logistics roadLogistics = new RoadLogistics();
         Logistics seaLogistics = new SeaLogistics();
 
@@ -13,10 +13,11 @@ public class Main {
 
         System.out.println("\n=== Abstract Factory Demo ===");
 
-        // Demonstrate Abstract Factory
+        // Demonstrate Abstract Factory pattern
         GUIFactory lightFactory = new LightThemeFactory();
         GUIFactory darkFactory = new DarkThemeFactory();
 
+        // Combine both patterns in the application
         LogisticsApp app1 = new LogisticsApp(new RoadLogistics(), lightFactory);
         LogisticsApp app2 = new LogisticsApp(new SeaLogistics(), darkFactory);
 
