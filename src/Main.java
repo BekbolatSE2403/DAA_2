@@ -1,30 +1,29 @@
-// Demo class demonstrating both design patterns
 public class Main {
     public static void main(String[] args) {
         System.out.println("=== Factory Method Demo ===");
 
-        // Demonstrate Factory Method pattern
-        Logistics roadLogistics = new RoadLogistics();
-        Logistics seaLogistics = new SeaLogistics();
+        Logistics road = new RoadLogistics();
+        Logistics sea = new SeaLogistics();
 
-        roadLogistics.planDelivery(100);
-        System.out.println();
-        seaLogistics.planDelivery(500);
+        road.planDelivery(100);
+        sea.planDelivery(500);
 
         System.out.println("\n=== Abstract Factory Demo ===");
 
-        // Demonstrate Abstract Factory pattern
-        GUIFactory lightFactory = new LightThemeFactory();
-        GUIFactory darkFactory = new DarkThemeFactory();
+        ThemeFactory light = new LightThemeFactory();
+        ThemeFactory dark = new DarkThemeFactory();
 
-        // Combine both patterns in the application
-        LogisticsApp app1 = new LogisticsApp(new RoadLogistics(), lightFactory);
-        LogisticsApp app2 = new LogisticsApp(new SeaLogistics(), darkFactory);
+        System.out.println("Light Theme: " + light.createButton() + " + " + light.createPanel());
+        System.out.println("Dark Theme: " + dark.createButton() + " + " + dark.createPanel());
 
-        System.out.println("Road Logistics with Light Theme:");
-        app1.run(150);
+        System.out.println("\n=== Combined Demo ===");
+        demonstrateCombined(road, light);
+        demonstrateCombined(sea, dark);
+    }
 
-        System.out.println("\nSea Logistics with Dark Theme:");
-        app2.run(300);
+    static void demonstrateCombined(Logistics logistics, ThemeFactory theme) {
+        System.out.println("--- Combined Operation ---");
+        logistics.planDelivery(200);
+        System.out.println("UI: " + theme.createButton() + " + " + theme.createPanel());
     }
 }
