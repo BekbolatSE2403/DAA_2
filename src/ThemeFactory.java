@@ -1,10 +1,10 @@
-// Abstract Factory
+// Abstract Factory interface
 interface ThemeFactory {
     String createButton();
     String createPanel();
 }
 
-// Concrete Factories
+// Concrete Factory for Light Theme
 class LightThemeFactory implements ThemeFactory {
     @Override
     public String createButton() {
@@ -17,6 +17,7 @@ class LightThemeFactory implements ThemeFactory {
     }
 }
 
+// Concrete Factory for Dark Theme
 class DarkThemeFactory implements ThemeFactory {
     @Override
     public String createButton() {
